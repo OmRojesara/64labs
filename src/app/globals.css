@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #080809;       /* Deep rich dark background */
+  --color-sand: #E3D5C1;           /* Premium warm beige for text and borders */
+  --color-burnt-orange: #F25922;   /* Sophisticated accent orange */
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-space-mono);
+}
+
+:root {
+  --background: var(--color-obsidian);
+  --foreground: var(--color-sand);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 
+  The Dark Neo-Brutalist Dot Grid
+*/
+.dot-grid {
+  background-image: radial-gradient(rgba(227, 213, 193, 0.15) 1.5px, transparent 1.5px);
+  background-size: 32px 32px; /* Zoomed on mobile */
+}
+
+@media (min-width: 768px) {
+  .dot-grid {
+    background-image: radial-gradient(rgba(227, 213, 193, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px; /* Normal on desktop */
+  }
+}
+
+.hero-title {
+  color: var(--color-burnt-orange);
+  text-shadow: 2px 2px 0px var(--color-sand);
+  -webkit-text-stroke: 1px var(--color-sand);
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    text-shadow: 4px 4px 0px var(--color-sand);
+    -webkit-text-stroke: 2px var(--color-sand);
+  }
+}
+
+/* 
+  Dark Neo-Brutalist Shadows
+  Uses Burnt Orange instead of black to pop off the Obsidian canvas
+*/
+.neo-shadow {
+  box-shadow: 4px 4px 0px var(--color-burnt-orange);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.neo-shadow:active {
+  box-shadow: 0px 0px 0px var(--color-burnt-orange);
+  transform: translate(4px, 4px);
+}
+
+.neo-shadow-hover:hover {
+  box-shadow: 6px 6px 0px var(--color-burnt-orange);
+  transform: translate(-2px, -2px);
+}
+
+.neo-shadow-hover:active {
+  box-shadow: 0px 0px 0px var(--color-burnt-orange);
+  transform: translate(4px, 4px);
+}
+
+.neo-shadow-sand {
+  box-shadow: 4px 4px 0px var(--color-sand);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.neo-shadow-sand:hover {
+  box-shadow: 6px 6px 0px var(--color-sand);
+  transform: translate(-2px, -2px);
+}
+
+.neo-shadow-sand:active {
+  box-shadow: 0px 0px 0px var(--color-sand);
+  transform: translate(4px, 4px);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}
